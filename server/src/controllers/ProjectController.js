@@ -78,7 +78,7 @@ class ProjectController {
 
             res.status(200).json({
                 status: 'success',
-                message: `Project with ${projectID} ID updated successfylly.`
+                message: `Project with ${projectID} ID updated successfully.`
             });
         } catch (error) {
             res.status(500).json({
