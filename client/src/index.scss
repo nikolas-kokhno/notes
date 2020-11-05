@@ -10,11 +10,12 @@
 }
 
 .app {
-  background: rgb(106,82,10);
-  background: linear-gradient(5deg, 
-    rgba(106,82,10,1) 0%, 
-    rgba(196,168,20,1) 19%, 
-    rgba(168,168,168,1) 100%
+  background: rgb(106, 82, 10);
+  background: linear-gradient(
+    5deg,
+    rgba(106, 82, 10, 1) 0%,
+    rgba(196, 168, 20, 1) 19%,
+    rgba(168, 168, 168, 1) 100%
   );
   min-height: 100vh;
   display: flex;
@@ -38,6 +39,16 @@
     }
   }
 
+  &__projects {
+    min-height: 80vh;
+
+    &-item {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: #fff;
+    }
+  }
+
   &__footer {
     margin-bottom: 20px;
     display: flex;
@@ -51,6 +62,61 @@
 
     &-copyright {
       color: #fff;
+    }
+  }
+}
+
+.project {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    align-items: center;
+    background-color: #1890ff;
+
+    &-name {
+      display: flex;
+      align-items: center;
+      width: 80%;
+
+      span {
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+
+    &-icon {
+      font-size: 16px;
+    }
+
+    &-options {
+      display: none;
+
+      svg {
+        cursor: pointer;
+        margin: 0 5px;
+        color: #fff;
+      }
+    }
+
+    &:hover .project__header-options {
+      display: flex;
+    }
+  }
+
+  &__add {
+    display: flex;
+    padding: 7px 10px;
+    align-items: center;
+    background-color: #e4e4e4;
+
+    &-icon {
+      margin-right: 10px;
+    }
+
+    &-input {
+      width: 100%;
     }
   }
 }

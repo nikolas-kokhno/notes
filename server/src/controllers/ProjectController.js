@@ -75,10 +75,11 @@ class ProjectController {
             }
 
             await ProjectModel.updateOne({ _id: projectID }, data);
+            const updatedProject = await ProjectModel.findById({ _id: projectID });
 
             res.status(200).json({
                 status: 'success',
-                message: `Project with ${projectID} ID updated successfully.`
+                data: updatedProject
             });
         } catch (error) {
             res.status(500).json({
@@ -106,6 +107,7 @@ class ProjectController {
 
             res.status(200).json({
                 status: 'success',
+                deletedID: projectID,
                 message: `Project with ${projectID} deleted successfully.`
             });
         } catch {

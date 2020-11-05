@@ -1,9 +1,11 @@
 import express from 'express';
+import cors from 'cors';
 import './db/connections';
 import { projectRouter, taksRouter } from './routes';
 
 const PORT = 4444;
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.use('/api/projects', projectRouter);

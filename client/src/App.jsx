@@ -1,7 +1,15 @@
 import React from 'react';
-import { AddButton, EmptyData } from './components';
+import { useDispatch } from 'react-redux';
+import { fetchProjects } from './store/actions/projects';
+import { AddButton, ProjectList } from './components';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(fetchProjects());
+  }, []);
+
   return (
     <div className="app">
 
@@ -9,8 +17,8 @@ const App = () => {
         <h2>simple todo list</h2>
         <h4>from ruby garage</h4>
       </div>
-      
-      <EmptyData />
+    
+      <ProjectList />
 
       <div className="app__footer">
         <AddButton />
